@@ -1,0 +1,96 @@
+{
+	"name": "brightscreen",
+	"displayName": "brightScreen",
+	"description": "Interactive Code Tutorials",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.48.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onView:brightScreen"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "brightScreen",
+					"title": "brightScreen",
+					"icon": "src/media/logoBlue.svg"
+				}
+			]
+		},
+		"views": {
+			"brightScreen": [
+				{
+					"id": "brightScreen",
+					"name": "brightScreen",
+					"icon": "src/media/logoBlue.svg",
+					"contextualTitle": "brightScreen"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "brightscreen.startBrightScreen",
+				"title": "Start Bright Screen",
+				"icon": {
+					"light": "src/media/logoBlue.svg",
+					"dark": "src/media/logoBlue.svg"
+				}
+			},
+			{
+				"command": "brightscreen.runTests",
+				"title": "Run Tests",
+				"icon": {
+					"light": "src/media/runCommand.svg",
+					"dark": "src/media/runCommand.svg"
+				}
+			}
+		],
+		"menus": {
+			"view/title": [
+				{
+					"command": "brightscreen.startBrightScreen",
+					"group": "navigation"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "brightscreen.runTests",
+					"group": "inline"
+				}
+			]
+		},
+		"viewsWelcome": [
+			{
+				"view": "brightScreen",
+				"contents": "No Course Selected\n[Find Them Here](https://brightScreen.io/)"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint src --ext ts",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.48.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.0",
+		"@types/node": "^14.0.27",
+		"eslint": "^7.6.0",
+		"@typescript-eslint/eslint-plugin": "^3.8.0",
+		"@typescript-eslint/parser": "^3.8.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.0.1",
+		"typescript": "^3.8.3",
+		"vscode-test": "^1.4.0"
+	}
+}
