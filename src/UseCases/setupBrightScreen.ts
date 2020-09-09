@@ -3,19 +3,25 @@ import * as fs from 'fs'
 import * as path from 'path'
 import BrightScreen from '../Entities/BrightScreen'
 import LessonInterface from '../Interfaces/LessonInterface'
+import LessonsProvider from './LessonsProvider'
 
 function setupBrightScreen (): void {
   const workspaceFolder: string = vscode.workspace.rootPath || ''
   let courseName: string
   let lessons: LessonInterface[]
 
+  let didBrightScreenExist: boolean = false
   try {
     const brightScreenPath = path.join(workspaceFolder, '.brightScreen')
-    const doesBrightScreenDirectoryExist: boolean = fs.existsSync(brightScreenPath)
-    if (!doesBrightScreenDirectoryExist) fs.mkdirSync(brightScreenPath)
+    didBrightScreenExist = fs.existsSync(brightScreenPath)
+    if (!didBrightScreenExist){
+      fs.mkdirSync(brightScreenPath)
+      return
+    }
   } catch (err) {
     console.log(err)
     vscode.window.showErrorMessage('Could not create .brightScreen directory')
+    return
   }
 
   let brightScreenCourseConfig: any
@@ -39,6 +45,13 @@ function setupBrightScreen (): void {
     courseName: courseName,
     lessons: lessons
   })
+
+  try {
+		vscode.window.registerTreeDataProvider('brightScreen', new LessonsProvider())
+	} catch (err) {
+    console.log(err)
+    return
+	}
   
   vscode.window.showInformationMessage(`brightScreen has been configured for ${courseName}`)
 }

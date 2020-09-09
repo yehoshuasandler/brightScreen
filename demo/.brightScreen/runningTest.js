@@ -1,7 +1,6 @@
 const codeFromUser = function (props) {
-  return props + 'js'
-} || function() { console.log('No User code Provided') }
-
+  return props
+}
 
 const test = () => {
   const input = 'yo'
@@ -9,11 +8,17 @@ const test = () => {
   const testedValue = codeFromUser(input)
 
   if (testedValue === expectedOutput) {
-    console.log('Passed Test 2')
-    return true
+    const message = {
+      didPass: true,
+      message: 'Passed Test 1'
+    }
+    console.log(JSON.stringify(message))
   } else {
-    console.log('Failed Test Two')
-    return false
+    const message = {
+      didPass: false,
+      message: 'Did not return expected value'
+    }
+    console.log(JSON.stringify(message))
   }
 }
 

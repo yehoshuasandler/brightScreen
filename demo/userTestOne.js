@@ -1,3 +1,3 @@
 function (props) {
-  return props + 'js'
+  return props
 }

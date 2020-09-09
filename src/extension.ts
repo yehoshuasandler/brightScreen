@@ -2,10 +2,8 @@ import * as vscode from 'vscode'
 import * as fs from 'fs'
 import BrightScreen from './Entities/BrightScreen'
 import setupBrightScreen from './UseCases/setupBrightScreen'
-import LessonsProvider from './UseCases/LessonsProvider'
 import LessonInterface from './Interfaces/LessonInterface'
-import { spawn, exec  } from 'child_process'
-import { stderr } from 'process'
+import { exec  } from 'child_process'
 
 export function activate(context: vscode.ExtensionContext) {
 	console.log('brightscreen is now active')
@@ -13,19 +11,9 @@ export function activate(context: vscode.ExtensionContext) {
 	let brightScreen: BrightScreen
 	let workspaceFolder: string
 	let lessons: LessonInterface[]
+	const outputChannel: vscode.OutputChannel = vscode.window.createOutputChannel('brightScreen')
 
-	setupBrightScreen()
-	brightScreen = BrightScreen.getInstance()
-	workspaceFolder = brightScreen.workspaceFolder
-	lessons = brightScreen.lessons
-
-	try {
-		vscode.window.registerTreeDataProvider('brightScreen', new LessonsProvider())
-	} catch (err) {
-		console.log(err)
-	}
-
-	const startupBrightScreenCommand = vscode.commands.registerCommand('brightscreen.startBrightScreen', (value) => {
+	const startupBrightScreenCommand = vscode.commands.registerCommand('brightscreen.startBrightScreen', () => {
 		setupBrightScreen()
 		brightScreen = BrightScreen.getInstance()
 		workspaceFolder = brightScreen.workspaceFolder
@@ -82,7 +70,29 @@ export function activate(context: vscode.ExtensionContext) {
 				console.log('exec error: ', error)
 			}
 
-			console.log(stdout)
+			let output: { didPass: boolean, message: string }
+			try {
+				output = JSON.parse(stdout)
+			} catch (err) {
+				console.log(err)
+				outputChannel.appendLine('Problem reading code from active text editor. Make sure to focus on the code you wish to test.')
+				vscode.window.showErrorMessage(`Issue receiving test results from ${treeItemContext.label}`, 'Read More').then( selection => {
+					if (selection === 'Read More') outputChannel.show()
+				})
+				return
+			}
+
+			outputChannel.appendLine(`${treeItemContext.label}: ${output.message}`)
+
+			if (output.didPass) {
+				vscode.window.showInformationMessage(`${treeItemContext.label} Passed!`, 'Read More').then( selection => {
+					if (selection === 'Read More') outputChannel.show()
+				})
+			} else {
+				vscode.window.showErrorMessage(`${treeItemContext.label} Failed!`).then( selection => {
+					if (selection === 'Read More') outputChannel.show()
+				})
+			}
 		})
 	})
 

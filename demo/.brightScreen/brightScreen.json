@@ -3,7 +3,7 @@
   "documentationUrl": "https://brightScreen.io/courses/Test-Lesson/",
   "lessons": [
     {
-      "name": "Lesson 1",
+      "name": "Lesson One",
       "location": "lessonOne/indexTest.js",
       "description": "Test Description for Lesson 1",
       "executionPrefix": "node",
@@ -12,7 +12,7 @@
       "documentationUrl": "https://brightScreen.io/courses/Test-Lesson/lesson-One/"
     },
     {
-      "name": "Lesson 2",
+      "name": "Lesson Two",
       "location": "lessonTwo/indexTest.js",
       "description": "Test Description for Lesson 2",
       "executionPrefix": "node",
