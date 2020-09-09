@@ -18,7 +18,7 @@ All that is required is a Git repo with a brightScreen.json configuration file t
       "documentationUrl": "https://brightScreen.io/courses/Test-Lesson/",
       "lessons": [
         {
-          "name": "Lesson 1",
+          "name": "Lesson One",
           "location": "lessonOne/indexTest.js",
           "description": "Test Description for Lesson 1",
           "executionPrefix": "node",
@@ -39,15 +39,17 @@ A course testing file will look something like this:
       const testedValue = codeFromUser(input)
 
       if (testedValue === expectedOutput) {
-        console.log({
+        const message = {
           didPass: true,
           message: 'Passed Test 1'
-        })
+        }
+        console.log(JSON.stringify(message))
       } else {
-        console.log({
+        const message = {
           didPass: false,
           message: 'Did not return expected value'
-        })
+        }
+        console.log(JSON.stringify(message))
       }
     }
 
@@ -59,11 +61,11 @@ In theory, any interpreted language can be used for a course as long as it can b
 
 Your tests are created as a child process. To interface vack with brightScreen, your tests should return a JSON object through the Standard Out of what every platform you are testing with.
 
-Example of Standard Iut from Tests
+Example of Standard Out from Tests
 
     {
-      didPass: false,
-      message: 'Value was not FizzBuzz'
+      "didPass": false,
+      "message": "Value was not FizzBuzz"
     }
 
 
