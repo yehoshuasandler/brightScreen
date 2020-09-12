@@ -5,6 +5,7 @@ interface LessonInterface {
   executionPrefix: string,
   fileExtention: string,
   replacementSubstring: string,
+  starterFileLocation: string,
   documentationUrl: string
 }
 

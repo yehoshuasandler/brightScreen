@@ -19,7 +19,8 @@ class LessonsProvider implements vscode.TreeDataProvider<LessonTreeItem> {
           l.executionPrefix,
           l.fileExtention,
           l.replacementSubstring,
-          l.location
+          l.location,
+          l.starterFileLocation
         )
       })
       return treeItems
@@ -34,7 +35,8 @@ class LessonTreeItem extends vscode.TreeItem {
     public readonly executionPrefix: string,
     public readonly fileExtention: string,
     public readonly replacementSubstring: string,
-    public readonly location: string
+    public readonly location: string,
+    public readonly starterFileLocation: string
     ) {
     super(label, collapsibleState)
   }

@@ -30,24 +30,53 @@
 					"name": "brightScreen",
 					"icon": "src/media/logoBlue.svg",
 					"contextualTitle": "brightScreen"
+				},
+				{
+					"id": "brightScreenCourses",
+					"name": "brightScreen Courses",
+					"contextualTitle": "courses"
 				}
 			]
 		},
 		"commands": [
 			{
 				"command": "brightscreen.startBrightScreen",
-				"title": "Start Bright Screen",
+				"title": "BrightScreen: Start BrightScreen",
 				"icon": {
 					"light": "src/media/logoBlue.svg",
 					"dark": "src/media/logoBlue.svg"
 				}
 			},
 			{
+				"command": "brightscreen.searchForCourses",
+				"title": "BrightScreen: Search For Courses",
+				"icon": {
+					"light": "src/media/searchIcon.svg",
+					"dark": "src/media/searchIcon.svg"
+				}
+			},
+			{
 				"command": "brightscreen.runTests",
-				"title": "Run Tests",
+				"title": "BrightScreen: Run Tests",
 				"icon": {
 					"light": "src/media/runCommand.svg",
 					"dark": "src/media/runCommand.svg"
+				}
+			},
+			{
+				"command": "brightscreen.createStarterFileForLesson",
+				"title": "BrightScreen: Create Start File For Lesson",
+				"icon": {
+					"light": "src/media/createIcon.svg",
+					"dark": "src/media/createIcon.svg"
+				}
+			},
+			{
+				"command": "brightscreen.downloadCourse",
+				"title": "BrightScreen: Download Course",
+				"icon": {
+					"light": "src/media/downloadIcon.svg",
+					"dark": "src/media/downloadIcon.svg"
 				}
 			}
 		],
@@ -55,12 +84,29 @@
 			"view/title": [
 				{
 					"command": "brightscreen.startBrightScreen",
+					"when": "view == brightScreen",
+					"group": "navigation"
+				},
+				{
+					"command": "brightscreen.searchForCourses",
+					"when": "view == brightScreenCourses",
 					"group": "navigation"
 				}
 			],
 			"view/item/context": [
 				{
 					"command": "brightscreen.runTests",
+					"when": "view == brightScreen",
+					"group": "inline"
+				},
+				{
+					"command": "brightscreen.createStarterFileForLesson",
+					"when": "view == brightScreen",
+					"group": "inline"
+				},
+				{
+					"command": "brightscreen.downloadCourse",
+					"when": "view == brightScreenCourses",
 					"group": "inline"
 				}
 			]
@@ -68,7 +114,7 @@
 		"viewsWelcome": [
 			{
 				"view": "brightScreen",
-				"contents": "No Course Selected\n[Find Them Here](https://brightScreen.io/)"
+				"contents": "Start brightScreen or Search for Courses\n[Documentation](https://brightScreen.io/)"
 			}
 		]
 	},
@@ -92,5 +138,8 @@
 		"mocha": "^8.0.1",
 		"typescript": "^3.8.3",
 		"vscode-test": "^1.4.0"
+	},
+	"dependencies": {
+		"axios": "^0.20.0"
 	}
 }

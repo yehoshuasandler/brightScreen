@@ -1,3 +1,0 @@
-function (props) {
-  return props
-}
