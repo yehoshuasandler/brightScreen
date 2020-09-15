@@ -1,11 +1,21 @@
-# <img alt="brightScreen" src="./src/media/logoBlue.svg" width="26px" /> brightscreen
+# <a href="https://brightScreen.io"> <img alt="brightScreen" src="./src/media/logoBlue.svg" width="26px" /> brightscreen </a>
+
+[💙 Support this Extention 💙](https://github.com/sponsors/joshuashoemaker/)
 
 
 ## VS Code Extention for Students
 
 brightScreen is an extention for your favorite text editor (as long as your text editor is VS Code) that brings interactive coding tutorials to help bring a new dynamic to learning. Instead of just following along with an article or video, you can download coding challanges that help solidify those theoretical lessons into something tangible.
 
-After installing a brightScreen course and activating brightScreen an new icon will appear in the Activity Pannel to the side. This will open a tree view showing all the available tests. By clicking on the `Run Tests` icon, you can test the code in your currently active editor against the instructors test senerios.
+Once selecting the `brightScren logo` in the activity bar you will be navigated to the `brightScreen Tree View`. If you are starting a new course, look to the bottom for the avalible brightScreen courses and install one by `clicking on the icon` that appears as you hover over an item.
+
+After you install a course, or if you already have one installed `click the blue brightScreen logo` at the top of the tree view to activate it. This will show all the avalible lessons to the installed course.
+
+Each lesson line item in the `Tree View` has two actions, `clicking the left icon` will paste some starter code into your active text editor. If there is an issue with this, make sure to click into a text window to activate an editor then click the icon again.
+
+If you are ready to check your code, `click the second icon` on a lesson line item to see if your code passes.
+
+![User Demo](./readmeMedia/brightScreenUserDemo.gif)
 
 ## New Platform for Instructors
 
