@@ -1,3 +1,4 @@
+import * as vscode from 'vscode'
 import BrightScreenInterface from '../Interfaces/BrightScreenInterface'
 import LessonInterface from '../Interfaces/LessonInterface'
 
@@ -7,6 +8,7 @@ class BrightScreen {
   public courseName: string
   public documentationUrl: string
   public lessons: LessonInterface[]
+  public outputChannel: vscode.OutputChannel
   
 
   constructor (props: BrightScreenInterface) {
@@ -16,6 +18,7 @@ class BrightScreen {
     this.courseName = props.courseName || ''
     this.documentationUrl = props.documentationUrl || ''
     this.lessons = props.lessons || []
+    this.outputChannel = vscode.window.createOutputChannel('brightScreen')
 
     return BrightScreen.instance
   }

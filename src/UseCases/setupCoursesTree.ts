@@ -1,6 +1,6 @@
 import * as vscode from 'vscode'
 import axios from 'axios'
-import CourseProvider from './CourseProvider'
+import CourseProvider from '../Entities/CourseProvider'
 
 function setupCoursesTree (): void {
   let courses: any

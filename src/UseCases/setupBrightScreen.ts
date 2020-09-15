@@ -3,7 +3,7 @@ import * as fs from 'fs'
 import * as path from 'path'
 import BrightScreen from '../Entities/BrightScreen'
 import LessonInterface from '../Interfaces/LessonInterface'
-import LessonsProvider from './LessonsProvider'
+import LessonsProvider from '../Entities/LessonsProvider'
 
 function setupBrightScreen (): void {
   const workspaceFolder: string = vscode.workspace.rootPath || ''
