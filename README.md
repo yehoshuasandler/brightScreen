@@ -34,8 +34,9 @@ All that is required is a Git repo with a brightScreen.json configuration file t
           "executionPrefix": "node",
           "fileExtention": "js",
           "replacementSubstring": "USER_CODE",
+          "starterFileLocation": "lessonOne/lessonOneStarter.js",
           "documentationUrl": "https://brightScreen.io/courses/Test-Lesson/lesson-One/"
-        }
+        },
       ]
     }
 
