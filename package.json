@@ -3,11 +3,18 @@
 	"displayName": "brightScreen",
 	"description": "Interactive Code Tutorials",
 	"version": "0.1.0",
+	"publisher": "Tzedakah",
+	"repository": "https://github.com/joshuashoemaker/brightScreen",
 	"engines": {
 		"vscode": "^1.48.0"
 	},
 	"categories": [
 		"Other"
+	],
+	"keywords": [
+		"challenges",
+		"unit test",
+		"tutorials"
 	],
 	"activationEvents": [
 		"onView:brightScreen"
@@ -140,6 +147,6 @@
 		"vscode-test": "^1.4.0"
 	},
 	"dependencies": {
-		"axios": "^0.20.0"
+		"axios": "^0.19.0"
 	}
 }
