@@ -5,7 +5,7 @@ import CourseProvider from '../Entities/CourseProvider'
 function setupCoursesTree (): void {
   let courses: any
   try {
-    axios.get('http://localhost:5000/api/courses')
+    axios.get('https://brightscreen.io/api/courses')
     .then(response => {
       console.log(response.data)
       courses = response.data
