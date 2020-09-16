@@ -50,8 +50,8 @@ class LessonTreeItem extends vscode.TreeItem {
   }
 
   iconPath = {
-    light: `../media/runCommand.svg`,
-    dark: '../media/runCommand.svg'
+    light: `../media/runCommand.png`,
+    dark: '../media/runCommand.png'
   }
 }
 

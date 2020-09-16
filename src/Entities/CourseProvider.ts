@@ -36,8 +36,8 @@ class CourseTreeItem extends vscode.TreeItem {
   }
 
   iconPath = {
-    light: `../media/downloadIcon.svg`,
-    dark: '../media/downloadIcon.svg'
+    light: `../media/downloadIcon.png`,
+    dark: '../media/downloadIcon.png'
   }
 }
 

@@ -1,4 +1,4 @@
-# <a href="https://brightScreen.io"> <img alt="brightScreen" src="./src/media/logoBlue.svg" width="26px" /> brightscreen </a>
+# <a href="https://brightScreen.io"> <img alt="brightScreen" src="./src/media/logoBlue.png" width="26px" /> brightscreen </a>
 
 [💙 Support this Extention 💙](https://github.com/sponsors/joshuashoemaker/)
 

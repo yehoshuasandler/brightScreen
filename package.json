@@ -2,7 +2,7 @@
 	"name": "brightscreen",
 	"displayName": "brightScreen",
 	"description": "Interactive Code Tutorials",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"engines": {
 		"vscode": "^1.48.0"
 	},
@@ -19,7 +19,7 @@
 				{
 					"id": "brightScreen",
 					"title": "brightScreen",
-					"icon": "src/media/logoBlue.svg"
+					"icon": "src/media/logoBlue.png"
 				}
 			]
 		},
@@ -28,7 +28,7 @@
 				{
 					"id": "brightScreen",
 					"name": "brightScreen",
-					"icon": "src/media/logoBlue.svg",
+					"icon": "src/media/logoBlue.png",
 					"contextualTitle": "brightScreen"
 				},
 				{
@@ -43,40 +43,40 @@
 				"command": "brightscreen.startBrightScreen",
 				"title": "BrightScreen: Start BrightScreen",
 				"icon": {
-					"light": "src/media/logoBlue.svg",
-					"dark": "src/media/logoBlue.svg"
+					"light": "src/media/logoBlue.png",
+					"dark": "src/media/logoBlue.png"
 				}
 			},
 			{
 				"command": "brightscreen.searchForCourses",
 				"title": "BrightScreen: Search For Courses",
 				"icon": {
-					"light": "src/media/searchIcon.svg",
-					"dark": "src/media/searchIcon.svg"
+					"light": "src/media/searchIcon.png",
+					"dark": "src/media/searchIcon.png"
 				}
 			},
 			{
 				"command": "brightscreen.runTests",
 				"title": "BrightScreen: Run Tests",
 				"icon": {
-					"light": "src/media/runCommand.svg",
-					"dark": "src/media/runCommand.svg"
+					"light": "src/media/runCommand.png",
+					"dark": "src/media/runCommand.png"
 				}
 			},
 			{
 				"command": "brightscreen.createStarterFileForLesson",
 				"title": "BrightScreen: Create Start File For Lesson",
 				"icon": {
-					"light": "src/media/createIcon.svg",
-					"dark": "src/media/createIcon.svg"
+					"light": "src/media/createIcon.png",
+					"dark": "src/media/createIcon.png"
 				}
 			},
 			{
 				"command": "brightscreen.downloadCourse",
 				"title": "BrightScreen: Download Course",
 				"icon": {
-					"light": "src/media/downloadIcon.svg",
-					"dark": "src/media/downloadIcon.svg"
+					"light": "src/media/downloadIcon.png",
+					"dark": "src/media/downloadIcon.png"
 				}
 			}
 		],
