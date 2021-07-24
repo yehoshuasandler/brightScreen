@@ -34,11 +34,6 @@ class BrightScreen {
       lessons: this.lessons
     }
   }
-
-  executeLessonTest (activeUserCode: string, lessonCode: string): void {
-    eval(activeUserCode)
-    eval(lessonCode)
-  }
 }
 
 export default BrightScreen

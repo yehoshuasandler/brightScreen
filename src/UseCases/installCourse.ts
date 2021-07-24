@@ -22,7 +22,7 @@ function installCourse (workspaceFolder: string, repo: string, outputChannel: vs
 
   gitInstallProcess.on('close', () => {
     console.log('Git Clone Process Closed')
-    vscode.window.showInformationMessage('Course successfully installed ot .brightScreen')
+    vscode.window.showInformationMessage('Course successfully installed to .brightScreen')
   })
 }
 
